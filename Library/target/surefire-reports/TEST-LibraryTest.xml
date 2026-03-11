@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="edu.eci.dosw.tdd.library.LibraryTest" time="0.059" tests="3" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="LibraryTest" time="0.06" tests="3" errors="1" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
-    <property name="sun.java.command" value="C:\Users\maria\AppData\Local\Temp\surefire11856633156421837695\surefirebooter-20260311034135065_3.jar C:\Users\maria\AppData\Local\Temp\surefire11856633156421837695 2026-03-11T03-41-34_851-jvmRun1 surefire-20260311034135065_1tmp surefire_0-20260311034135065_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\maria\AppData\Local\Temp\surefire6247012728493350612\surefirebooter-20260311033744210_3.jar C:\Users\maria\AppData\Local\Temp\surefire6247012728493350612 2026-03-11T03-37-43_953-jvmRun1 surefire-20260311033744210_1tmp surefire_0-20260311033744210_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\maria\OneDrive\Escritorio\universidad\quintoSemestre\DOWS\DOSW_Lab6_LXJJE\Library\target\test-classes;C:\Users\maria\OneDrive\Escritorio\universidad\quintoSemestre\DOWS\DOSW_Lab6_LXJJE\Library\target\classes;C:\Users\maria\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\maria\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\maria\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\maria\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\maria\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;C:\Users\maria\.m2\repository\org\junit\jupiter\junit-jupiter\5.13.1\junit-jupiter-5.13.1.jar;C:\Users\maria\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.0\junit-jupiter-engine-5.11.0.jar;C:\Users\maria\.m2\repository\org\junit\platform\junit-platform-engine\1.11.0\junit-platform-engine-1.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\maria\AppData\Local\Temp\surefire11856633156421837695\surefirebooter-20260311034135065_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\maria\AppData\Local\Temp\surefire6247012728493350612\surefirebooter-20260311033744210_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25+37-LTS-3491"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="shouldAddDifferentBooks" classname="edu.eci.dosw.tdd.library.LibraryTest" time="0.022">
+  <testcase name="shouldAddDifferentBooks" classname="LibraryTest" time="0.03">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -67,14 +67,21 @@
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
-	at edu.eci.dosw.tdd.library.LibraryTest.shouldAddDifferentBooks(LibraryTest.java:24)
+	at LibraryTest.shouldAddDifferentBooks(LibraryTest.java:24)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 ]]></failure>
   </testcase>
-  <testcase name="shouldNotLoanBookWithoutUser" classname="edu.eci.dosw.tdd.library.LibraryTest" time="0.01"/>
-  <testcase name="shouldIncreaseStockWhenReturned" classname="edu.eci.dosw.tdd.library.LibraryTest" time="0.004">
+  <testcase name="shouldNotLoanBookWithoutUser" classname="LibraryTest" time="0.008">
+    <error message="Cannot invoke &quot;java.util.Collection.size()&quot; because the return value of &quot;edu.eci.dosw.tdd.library.Library.getLoans()&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Collection.size()" because the return value of "edu.eci.dosw.tdd.library.Library.getLoans()" is null
+	at LibraryTest.shouldNotLoanBookWithoutUser(LibraryTest.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></error>
+  </testcase>
+  <testcase name="shouldIncreaseStockWhenReturned" classname="LibraryTest" time="0.004">
     <failure message="expected: not &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: not <null>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -82,7 +89,7 @@
 	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:35)
 	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:30)
 	at org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:304)
-	at edu.eci.dosw.tdd.library.LibraryTest.shouldIncreaseStockWhenReturned(LibraryTest.java:52)
+	at LibraryTest.shouldIncreaseStockWhenReturned(LibraryTest.java:51)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
