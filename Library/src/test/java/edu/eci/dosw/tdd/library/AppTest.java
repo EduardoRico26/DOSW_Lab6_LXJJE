@@ -1,4 +1,4 @@
-package edu.eci.dosw.tdd;
+package edu.eci.dosw.tdd.library;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
