@@ -39,5 +39,25 @@ public class LibraryTest {
         assertNotNull(loan);
     }
 
+    @Test
+    public void shouldReturnLoan(){
+
+        Library library = new Library();
+        Book book = new Book("Cien años de soledad","Gabriel García Márquez","111");
+
+        library.addBook(book);
+
+        User user = new User();
+        user.setId("1");
+
+        library.addUser(user);
+
+        Loan loan = library.loanABook("1","111");
+
+        Loan returned = library.returnLoan(loan);
+
+        assertNotNull(returned);
+    }
+
 
 }

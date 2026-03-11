@@ -1,8 +1,21 @@
 -------------------------------------------------------------------------------
 Test set: edu.eci.dosw.tdd.library.LibraryTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! -- in edu.eci.dosw.tdd.library.LibraryTest
-edu.eci.dosw.tdd.library.LibraryTest.shouldLoanABook -- Time elapsed: 0.010 s <<< FAILURE!
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! -- in edu.eci.dosw.tdd.library.LibraryTest
+edu.eci.dosw.tdd.library.LibraryTest.shouldReturnLoan -- Time elapsed: 0 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:49)
+	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:35)
+	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:30)
+	at org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:304)
+	at edu.eci.dosw.tdd.library.LibraryTest.shouldReturnLoan(LibraryTest.java:59)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+edu.eci.dosw.tdd.library.LibraryTest.shouldLoanABook -- Time elapsed: 0.012 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: not <null>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -15,7 +28,7 @@ org.opentest4j.AssertionFailedError: expected: not <null>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 
-edu.eci.dosw.tdd.library.LibraryTest.shouldAddABook -- Time elapsed: 0.002 s <<< FAILURE!
+edu.eci.dosw.tdd.library.LibraryTest.shouldAddABook -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
