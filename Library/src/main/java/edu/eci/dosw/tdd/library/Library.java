@@ -62,6 +62,23 @@ public class Library {
                return null;
            }
        }
+        
+       // 4. Crear el préstamo
+       books.put(foundBook, books.get(foundBook) - 1);
+
+       Loan loan = new Loan();
+       loan.setBook(foundBook);
+       loan.setUser(foundUser);
+       loan.setLoanDate(LocalDateTime.now());
+       loan.setStatus(LoanStatus.ACTIVE);
+       loans.add(loan);
+
+       return loan;
+   }
+
+
+
+        
     public Loan returnLoan(Loan loan) {
 
         // TODO Implement the logic to return a loan.
