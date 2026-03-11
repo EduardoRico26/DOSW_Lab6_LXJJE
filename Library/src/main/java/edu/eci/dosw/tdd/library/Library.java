@@ -22,8 +22,14 @@ public class Library {
     }
 
     public boolean addBook(Book book) {
-        // TODO Implement the logic to add a new book into the map.
-        return false;
+        if (book == null) return false;
+    
+        if (books.containsKey(book)) {
+           books.put(book, books.get(book) + 1);
+        } else {
+           books.put(book, 1);
+        }
+        return true;
     }
 
     public Loan loanABook(String userId, String isbn) {
