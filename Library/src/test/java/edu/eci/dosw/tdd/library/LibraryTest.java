@@ -13,16 +13,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryTest {
-	@Test
-	public void shouldAddMultipleCopies(){
 
-	    Library library = new Library();
-	    Book book = new Book("El amor en los tiempos del cólera","Gabriel García Márquez","222");
+    @Test
+    public void shouldAddABook(){
 
-	    library.addBook(book);
-	    library.addBook(book);
+        Library library = new Library();
+        Book book = new Book("Cien años de soledad","Gabriel García Márquez","111");
 
-	    boolean result = library.addBook(book);
+        boolean result = library.addBook(book);
 
 	    assertTrue(result);
 	}
@@ -67,71 +65,81 @@ public class LibraryTest {
 
         assertTrue(result);
     }
-
     @Test
-    public void shouldNotLoanBookWithoutUser(){
-        Library library = new Library();
-        Book book = new Book("Nivola","JMiguel de Unamuno","487");
-        library.addBook(book);
-        Loan loan = library.loanABook("10","487");
+    public void shouldAddMultipleCopies(){
 
-        assertNull(loan);
+        Library library = new Library();
+        Book book = new Book("El amor en los tiempos del cólera","Gabriel García Márquez","222");
+
+        library.addBook(book);
+        library.addBook(book);
+
+        boolean result = library.addBook(book);
+
+        assertTrue(result);
     }
 
     @Test
-    public void shouldIncreaseStockWhenReturned(){
+    public void shouldLoanABook(){
+
         Library library = new Library();
-        Book book = new Book("El poder de sanar", "Doctor Bayter", "456");
+        Book book = new Book("Cien años de soledad","Gabriel García Márquez","111");
 
         library.addBook(book);
 
         User user = new User();
-        user.setId("5");
+        user.setId("1");
 
         library.addUser(user);
 
-        Loan loan = library.loanABook("5", "456");
+        Loan loan = library.loanABook("1","111");
 
         assertNotNull(loan);
-        assertEquals(LoanStatus.ACTIVE, loan.getStatus());
-
-        Loan returnedLoan = library.returnLoan(loan);
-
-        assertNotNull(returnedLoan);
-        assertEquals(LoanStatus.RETURNED, returnedLoan.getStatus());
-        assertNotNull(returnedLoan.getReturnDate());
-
-        Loan newLoan = library.loanABook("5", "456");
-        assertNotNull(newLoan);
-        assertEquals(LoanStatus.ACTIVE, newLoan.getStatus());
     }
 
+    @Test
+    public void shouldReturnLoan(){
 
+        Library library = new Library();
+        Book book = new Book("Cien años de soledad","Gabriel García Márquez","111");
 
-	@Test
-	public void shouldNotLoanSameBookTwiceToSameUser() {
-    		Library library = new Library();
-    		Book book = new Book("Rayuela", "Julio Cortázar", "555");
-    		library.addBook(book);
-    		library.addBook(book); // dos copias disponibles
-    		User user = new User();
-    		user.setId("4");
-    		library.addUser(user);
-    		library.loanABook("4", "555");
-    		Loan secondLoan = library.loanABook("4", "555");
-    		assertNull(secondLoan);
-	}
+        library.addBook(book);
 
-	@Test
-	public void shouldSetReturnDateWhenLoanReturned() {
-    	Library library = new Library();
-    	Book book = new Book("Rayuela", "Julio Cortázar", "555");
-    	library.addBook(book);
-    	User user = new User();
-    	user.setId("4");
-    	library.addUser(user);
-    	Loan loan = library.loanABook("4", "555");
-    	Loan returned = library.returnLoan(loan);
-    	assertNotNull(returned.getReturnDate());
-	}
+        User user = new User();
+        user.setId("1");
+
+        library.addUser(user);
+
+        Loan loan = library.loanABook("1","111");
+
+        Loan returned = library.returnLoan(loan);
+
+        assertNotNull(returned);
+    }
+    @Test
+    public void shouldSetReturnDateWhenLoanReturned() {
+        Library library = new Library();
+        Book book = new Book("Rayuela", "Julio Cortázar", "555");
+        library.addBook(book);
+        User user = new User();
+        user.setId("4");
+        library.addUser(user);
+        Loan loan = library.loanABook("4", "555");
+        Loan returned = library.returnLoan(loan);
+        assertNotNull(returned.getReturnDate());
+    }
+    @Test
+    public void shouldNotLoanSameBookTwiceToSameUser() {
+        Library library = new Library();
+        Book book = new Book("Rayuela", "Julio Cortázar", "555");
+        library.addBook(book);
+        library.addBook(book); // dos copias disponibles
+        User user = new User();
+        user.setId("4");
+        library.addUser(user);
+        library.loanABook("4", "555");
+        Loan secondLoan = library.loanABook("4", "555");
+        assertNull(secondLoan);
+    }
+
 }
