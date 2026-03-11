@@ -4,10 +4,7 @@ import edu.eci.dosw.tdd.library.book.Book;
 import edu.eci.dosw.tdd.library.loan.Loan;
 import edu.eci.dosw.tdd.library.user.User;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Library responsible for manage the loans and the users.
@@ -43,5 +40,9 @@ public class Library {
 
     public boolean addUser(User user) {
         return users.add(user);
+    }
+
+    public List<Loan> getLoans() {
+        return loans;
     }
 }
