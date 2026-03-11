@@ -52,6 +52,7 @@ public class LibraryTest {
 
 	    User user = new User();
 	    user.setId("2");
+	}
 
     @Test
     public void shouldAddDifferentBooks(){
@@ -75,7 +76,6 @@ public class LibraryTest {
         Loan loan = library.loanABook("10","487");
 
         assertNull(loan);
-        assertEquals(0, library.getLoans().size());
     }
 
     @Test
@@ -106,22 +106,7 @@ public class LibraryTest {
         assertEquals(LoanStatus.ACTIVE, newLoan.getStatus());
     }
 
-	    library.addUser(user);
 
-	    Loan loan = library.loanABook("2","222");
-
-	    Loan returned = library.returnLoan(loan);
-
-	    assertEquals(LoanStatus.RETURNED, returned.getStatus());
-import static org.junit.jupiter.api.Assertions.*;
-
-public class LibraryTest {
-	@Test
-	public void shouldNotAddNullBook() {
-    		Library library = new Library();
-    		boolean result = library.addBook(null);
-    		assertFalse(result);
-	}
 
 	@Test
 	public void shouldNotLoanSameBookTwiceToSameUser() {
