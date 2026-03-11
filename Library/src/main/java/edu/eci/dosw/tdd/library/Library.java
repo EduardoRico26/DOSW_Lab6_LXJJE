@@ -2,17 +2,15 @@ package edu.eci.dosw.tdd.library;
 
 import edu.eci.dosw.tdd.library.book.Book;
 import edu.eci.dosw.tdd.library.loan.Loan;
+import edu.eci.dosw.tdd.library.loan.LoanStatus;
 import edu.eci.dosw.tdd.library.user.User;
 
-<<<<<<< feature/metodo-returnLoan
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.time.LocalDateTime;
-=======
 import java.util.*;
->>>>>>> develop
 
 /**
  * Library responsible for manage the loans and the users.
@@ -83,17 +81,12 @@ public class Library {
        loan.setLoanDate(LocalDateTime.now());
        loan.setStatus(LoanStatus.ACTIVE);
        loans.add(loan);
-
-<<<<<<< feature/metodo-returnLoan
-
-=======
        return loan;
    }
 
 
 
-        
->>>>>>> develop
+
     public Loan returnLoan(Loan loan) {
 
        // 1. Verificar que el préstamo exista en el sistema
