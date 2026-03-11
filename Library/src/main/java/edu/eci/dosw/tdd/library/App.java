@@ -1,4 +1,4 @@
-package edu.eci.dosw.tdd;
+package edu.eci.dosw.tdd.library;
 
 /**
  * Hello world!
