@@ -4,7 +4,15 @@ import edu.eci.dosw.tdd.library.book.Book;
 import edu.eci.dosw.tdd.library.loan.Loan;
 import edu.eci.dosw.tdd.library.user.User;
 
+<<<<<<< feature/metodo-returnLoan
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.time.LocalDateTime;
+=======
 import java.util.*;
+>>>>>>> develop
 
 /**
  * Library responsible for manage the loans and the users.
@@ -76,17 +84,31 @@ public class Library {
        loan.setStatus(LoanStatus.ACTIVE);
        loans.add(loan);
 
+<<<<<<< feature/metodo-returnLoan
+
+=======
        return loan;
    }
 
 
 
         
+>>>>>>> develop
     public Loan returnLoan(Loan loan) {
 
-        // TODO Implement the logic to return a loan.
-        return null;
+       // 1. Verificar que el préstamo exista en el sistema
+       if (!loans.contains(loan)) return null;
+
+       // 2. Aumentar el stock del libro
+       books.put(loan.getBook(), books.get(loan.getBook()) + 1);
+
+       // 3. Actualizar estado y fecha de devolución
+       loan.setStatus(LoanStatus.RETURNED);
+       loan.setReturnDate(LocalDateTime.now());
+
+       return loan;
     }
+
 
     public boolean addUser(User user) {
         return users.add(user);
