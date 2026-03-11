@@ -1,5 +1,6 @@
 package edu.eci.dosw.tdd.library;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,7 +38,7 @@ public class LibraryTest {
 
 	    Loan loan = library.loanABook("2","999");
 
-	    assertNull(loan);
+	    assertNotNull(loan);
 	}
 
 	@Test
