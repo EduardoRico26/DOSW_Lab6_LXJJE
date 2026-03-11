@@ -1,6 +1,14 @@
 package edu.eci.dosw.tdd.library;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+
+import edu.eci.dosw.tdd.library.book.Book;
+import edu.eci.dosw.tdd.library.loan.Loan;
+import edu.eci.dosw.tdd.library.loan.LoanStatus;
+import edu.eci.dosw.tdd.library.user.User;
 
 public class LibraryTest {
 	@Test
